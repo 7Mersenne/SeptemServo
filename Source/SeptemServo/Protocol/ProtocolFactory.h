@@ -50,6 +50,7 @@ protected:
 #define __REG_PROTOCOL_NETBODY_THREADSAFE_STACK(UID, TYPE)\
 Septem::FProtocolFactory::Get()->RegisterProtocolDeserialize(UID, \
 	, std::bind(&TServoProtocol < TYPE, SPPMode::Stack>::OnReceivedPacket\
+	, TServoProtocol < FNetBody1exo, ESPMode::ThreadSafe, SPPMode::Stack>::Get()\
 	, std::placeholders::_1\
 	, std::placeholders::_2\
 	, std::placeholders::_3\
@@ -61,6 +62,7 @@ Septem::FProtocolFactory::Get()->RegisterProtocolDeserialize(UID, \
 #define __REG_PROTOCOL_NETBODY_THREADSAFE_QUEUE(UID, TYPE)\
 FProtocolFactory::Get()->RegisterProtocolDeserialize(UID, \
 	, std::bind(&TServoProtocol < TYPE, ESPMode::ThreadSafe, SPPMode::Queue>::OnReceivedPacket\
+	, TServoProtocol < FNetBody1exo, ESPMode::ThreadSafe, SPPMode::Queue>::Get()\
 	, std::placeholders::_1\
 	, std::placeholders::_2\
 	, std::placeholders::_3\
