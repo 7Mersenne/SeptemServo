@@ -63,6 +63,7 @@ uint32 FClientThread::Run()
 		else {
 			if (bRepeatConnect)
 			{
+				FPlatformProcess::Sleep(20.f);
 				ConnectToServer();
 			}
 		}
